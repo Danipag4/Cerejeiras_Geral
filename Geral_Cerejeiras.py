@@ -51,7 +51,7 @@ df_MédiaGeral = df_filtered5.groupby("Nome")[["Autoavaliação","Gestor","Pares
 #df_MédiaGeral = df_filtered5.groupby("Nome")[["Autoavaliação","Gestor"]].mean().round(decimals=2).sort_values('Gestor').reset_index()
 #df_MédiaGeral
 
-if Nome == "CAMPO":
+if Nome == "CAMPO" or Nome == "ADMINISTRATIVO":
     fig_DesenvGeral = px.bar(df_MédiaGeral, x=aval, y="Nome", orientation="h", height=1200, barmode='group',color_discrete_map = {"Autoavaliação":"#281BD2", "Gestor":"#764D29","Pares":"#EDEC7C", "Liderados":"#F0A652"})
     fig_DesenvGeral.update_layout(xaxis_title="Média", yaxis_title="Colaborador")
     fig_DesenvGeral    
